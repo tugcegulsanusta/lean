@@ -1,35 +1,44 @@
-theorem and_commutative (p q : Prop) : p ∧ q → q ∧ p :=
-  fun hpq : p ∧ q =>
-  have hp : p := And.left hpq
-  have hq : q := And.right hpq
-  show q ∧ p from And.intro hq hp
+#eval 13+5
+
+#eval String.append "great " (String.append "oak " "tree")
+
+#eval 42 + 19
+
+#eval String.append "A" (String.append "B" "C")
+
+#eval String.append (String.append "A" "B") "C"
+
+#eval if 3 == 3 then 5 else 7
+
+#eval if 3 == 4 then "equal" else "not equal"
+
+#check (1 - 2 : Int)
+
+def hello := "Hello"
+
+def lean : String := "Lean"
+
+#eval String.append hello (String.append " " lean)
 
 
-
-/- Define some constants. -/
-
-def m : Nat := 1       -- m is a natural number
+def m : Nat := 1
 def n : Nat := 0
-def b1 : Bool := true  -- b1 is a Boolean
+def b1 : Bool := true
 def b2 : Bool := false
 
-/- Check their types. -/
 
-#check m            -- output: Nat
+
+#check m
 #check n
-#check n + 0        -- Nat
-#check m * (n + 0)  -- Nat
-#check b1           -- Bool
-#check b1 && b2     -- "&&" is the Boolean and
-#check b1 || b2     -- Boolean or
-#check true         -- Boolean "true"
-
-/- Evaluate -/
-
-#eval 5 * 4         -- 20
-#eval m + 2         -- 3
-#eval b1 && b2      -- false
+#check n + 0
+#check m * (n + 0)
+#check b1
+#check b1 && b2
+#check b1 || b2
+#check true
 
 
-theorem thm₁ (a b c d e : Prop) (h : a ↔ b) : (c ∧ a ∧ d → e) ↔ (c ∧ b ∧ d → e) :=
-  propext h ▸ Iff.refl _
+
+#eval 5 * 4
+#eval m + 2
+#eval b1 && b2
